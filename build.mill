@@ -1,0 +1,15 @@
+package build
+
+import mill._
+import mill.scalajslib._
+import mill.scalalib._
+
+object sjs extends ScalaJSModule {
+  override def scalaJSVersion: T[String] = "1.16.0"
+
+  override def scalaVersion: T[String] = "3.5.0"
+
+  override def ivyDeps: T[Agg[Dep]] = Agg(
+    ivy"com.armanbilge::calico::0.2.2"
+  )
+}
